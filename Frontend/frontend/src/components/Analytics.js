@@ -14,19 +14,9 @@ function Analytics() {
     setData(res.data);
   };
 
-  // ✅ Clear history function
-  const clearHistory = async () => {
-    await axios.delete('http://localhost:5000/clear'); // backend route needed
-    setData([]);
-  };
-
   return (
     <div className="container">
       <h2>Analytics</h2>
-
-      <button className="clear-btn" onClick={clearHistory}>
-        Clear History
-      </button>
 
       {data.map((item) => (
         <div className="card" key={item._id}>
