@@ -10,8 +10,7 @@ function Analytics() {
   }, []);
 
   const fetchData = async () => {
-    const API = process.env.REACT_APP_API_URL;
-    const res = await axios.get(`${API}/analytics`);
+    const res = await axios.get('http://localhost:5000/analytics');
     setData(res.data);
   };
 
