@@ -9,7 +9,8 @@ exports.createShortUrl = async (req, res) => {
   const url = new Url({ originalUrl, shortCode });
   await url.save();
 
-  res.json({ shortUrl: `http://localhost:5000/${shortCode}` });
+ const baseUrl = process.env.BASE_URL || `http://localhost:5000`;
+  res.json({ shortUrl: `${baseUrl}/${shortCode}` });
 };
 
 exports.redirectUrl = async (req, res) => {
