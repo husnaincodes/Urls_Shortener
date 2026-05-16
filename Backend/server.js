@@ -11,7 +11,7 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
-app.use('/', urlRoutes);
+app.use('/api', urlRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
