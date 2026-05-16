@@ -6,6 +6,7 @@ function Analytics() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [isClearing, setIsClearing] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -24,11 +25,39 @@ function Analytics() {
     }
   };
 
+  const handleClearHistory = async () => {
+    if (!window.confirm('Clear all analytics history?')) {
+      return;
+    }
+
+    try {
+      setIsClearing(true);
+      setError('');
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/clear`);
+      setData([]);
+    } catch (err) {
+      console.error(err);
+      setError('Failed to clear history. Please try again.');
+    } finally {
+      setIsClearing(false);
+    }
+  };
+
   return (
     <div className="container">
-      <div className="section-header">
-        <h2>Link analytics</h2>
-        <p>Track clicks and keep an eye on every short link.</p>
+      <div className="section-header-row">
+        <div className="section-header">
+          <h2>Link analytics</h2>
+          <p>Track clicks and keep an eye on every short link.</p>
+        </div>
+        <button
+          className="ghost-button"
+          onClick={handleClearHistory}
+          disabled={loading || isClearing || data.length === 0}
+          type="button"
+        >
+          {isClearing ? 'Clearing...' : 'Clear history'}
+        </button>
       </div>
 
       {loading && <p className="muted">Loading...</p>}
