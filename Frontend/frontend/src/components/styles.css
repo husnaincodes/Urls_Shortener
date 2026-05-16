@@ -1,72 +1,97 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #667eea, #764ba2);
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-/* Main container */
 .container {
-  width: 90%;
-  max-width: 600px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.section-header p {
+  margin: 6px 0 0;
+  color: #c7b6a9;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.url-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 14px;
+  background: #120d0a;
+  color: #f7efe7;
+  border: 1px solid rgba(244, 162, 97, 0.25);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
 }
 
-/* Heading */
-h1, h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.url-input::placeholder {
+  color: rgba(247, 239, 231, 0.45);
 }
 
-/* Input */
-input {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-right: 10px;
-}
-
-/* Buttons */
-button {
-  padding: 10px 15px;
+.primary-button {
+  padding: 12px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f4a261, #c86a3c);
+  color: #1b120c;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Shorten button */
-button:hover {
-  opacity: 0.85;
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(244, 162, 97, 0.2);
 }
 
-/* Clear button */
-.clear-btn {
-  background: #ff4d4d;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.clear-btn:hover {
-  background: #e60000;
-}
-
-/* Cards */
 .card {
-  background: #f9f9f9;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border-left: 5px solid #667eea;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.card:hover {
-  transform: scale(1.02);
+.card-row {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(199, 182, 169, 0.75);
+  margin: 0;
+}
+
+.muted {
+  color: #c7b6a9;
+}
+
+.error {
+  color: #ff8a65;
+}
+
+.clicks {
+  min-width: 90px;
+  padding: 8px 12px;
+  background: rgba(244, 162, 97, 0.12);
+  border-radius: 12px;
+}
+
+.clicks span {
+  font-size: 1.2rem;
+  font-weight: 600;
 }

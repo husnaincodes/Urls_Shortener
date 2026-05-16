@@ -23,24 +23,28 @@ function Shortener() {
 
   return (
     <div className="container">
-      <h2>URL Shortener</h2>
+      <div className="section-header">
+        <h2>Shorten a link</h2>
+        <p>Paste your long URL and get a clean short link instantly.</p>
+      </div>
 
-      <div style={{ display: 'flex', gap: '10px' }}>
+      <div className="input-group">
         <input
+          className="url-input"
           type="text"
-          placeholder="Enter your long URL..."
+          placeholder="https://your-long-link.com"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
 
-        <button onClick={handleSubmit}>
+        <button className="primary-button" onClick={handleSubmit}>
           Shorten
         </button>
       </div>
 
       {shortUrl && (
         <div className="card">
-          <p><strong>Short URL:</strong></p>
+          <p className="label">Short URL</p>
           <a href={shortUrl} target="_blank" rel="noreferrer">
             {shortUrl}
           </a>

@@ -26,22 +26,37 @@ function Analytics() {
 
   return (
     <div className="container">
-      <h2>Analytics</h2>
+      <div className="section-header">
+        <h2>Link analytics</h2>
+        <p>Track clicks and keep an eye on every short link.</p>
+      </div>
 
-      {loading && <p>Loading...</p>}
+      {loading && <p className="muted">Loading...</p>}
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {!loading && !error && data.length === 0 && (
-        <p>No URLs shortened yet.</p>
+        <p className="muted">No URLs shortened yet.</p>
       )}
 
       {data.map((item) => (
         <div className="card" key={item._id}>
-          <p><strong>Original URL:</strong> <a href={item.originalUrl} target="_blank" rel="noreferrer">{item.originalUrl}</a></p>
-          <p><strong>Short URL:</strong> <a href={item.shortUrl} target="_blank" rel="noreferrer">{item.shortUrl}</a></p>
-          <p><strong>Clicks:</strong> {item.clicks}</p>
-          
+          <p className="label">Original URL</p>
+          <a href={item.originalUrl} target="_blank" rel="noreferrer">
+            {item.originalUrl}
+          </a>
+          <div className="card-row">
+            <div>
+              <p className="label">Short URL</p>
+              <a href={item.shortUrl} target="_blank" rel="noreferrer">
+                {item.shortUrl}
+              </a>
+            </div>
+            <div className="clicks">
+              <p className="label">Clicks</p>
+              <span>{item.clicks}</span>
+            </div>
+          </div>
         </div>
       ))}
     </div>
