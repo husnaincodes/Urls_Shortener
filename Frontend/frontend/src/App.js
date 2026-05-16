@@ -12,7 +12,7 @@ function App() {
             <span className="brand-mark">S</span>
             <span className="brand-name">Shortly</span>
           </div>
-          <h1>Professional URL shortener for modern teams</h1>
+          <h1>URL shortener for modern teams</h1>
           <p>
             Create clean, memorable links and keep track of performance with a
             warm, focused dashboard.
@@ -37,7 +37,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>Built for speed and clarity. Shorten with confidence. Built by husnaicodes.</p>
+        <p>Built for speed and clarity. Shorten with confidence. Built by husnaincodes.</p>
       </footer>
     </div>
   );
