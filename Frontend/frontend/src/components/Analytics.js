@@ -10,7 +10,8 @@ function Analytics() {
   }, []);
 
   const fetchData = async () => {
-   const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/analytics`);
+   
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/analytics`);
     setData(res.data);
   };
 
