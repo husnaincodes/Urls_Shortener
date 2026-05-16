@@ -75,12 +75,6 @@ function Analytics() {
             {item.originalUrl}
           </a>
           <div className="card-row">
-            <div>
-              <p className="label">Short URL</p>
-              <a href={item.shortUrl} target="_blank" rel="noreferrer">
-                {item.shortUrl}
-              </a>
-            </div>
             <div className="clicks">
               <p className="label">Clicks</p>
               <span>{item.clicks}</span>

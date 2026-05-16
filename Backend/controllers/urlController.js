@@ -34,7 +34,12 @@ exports.redirectUrl = async (req, res) => {
 exports.getAnalytics = async (req, res) => {
   try {
     const urls = await Url.find();
-    res.json(urls);
+    const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+    const payload = urls.map((url) => ({
+      ...url.toObject(),
+      shortUrl: `${baseUrl}/${url.shortCode}`
+    }));
+    res.json(payload);
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
