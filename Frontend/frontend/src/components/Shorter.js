@@ -9,7 +9,7 @@ function Shortener() {
   // ✅ Handle shorten request
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/shorten', {
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/shorten`, {
         originalUrl: url
       });
 
