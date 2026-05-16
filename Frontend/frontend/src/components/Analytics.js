@@ -41,7 +41,7 @@ function Analytics() {
           <p><strong>Original URL:</strong> <a href={item.originalUrl} target="_blank" rel="noreferrer">{item.originalUrl}</a></p>
           <p><strong>Short URL:</strong> <a href={item.shortUrl} target="_blank" rel="noreferrer">{item.shortUrl}</a></p>
           <p><strong>Clicks:</strong> {item.clicks}</p>
-          <p><strong>Created:</strong> {new Date(item.createdAt).toLocaleDateString()}</p>
+          
         </div>
       ))}
     </div>
