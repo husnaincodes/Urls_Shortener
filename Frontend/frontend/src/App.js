@@ -37,7 +37,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>Built for speed and clarity. Shorten with confidence.</p>
+        <p>Built for speed and clarity. Shorten with confidence. Built by husnaicodes.</p>
       </footer>
     </div>
   );
