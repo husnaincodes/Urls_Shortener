@@ -43,6 +43,7 @@ function Analytics() {
     }
   };
 
+  
   return (
     <div className="container">
       <div className="section-header-row">
