@@ -6,7 +6,7 @@ function Shortener() {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
 
-  // ✅ Handle shorten request
+
   const handleSubmit = async () => {
     try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/shorten`, {
